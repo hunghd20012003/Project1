@@ -2,7 +2,7 @@
 
 name = "project"
 client_id = "274529d233b60d45ead01e688b942852"
-application_url = "https://toner-shaped-bra-linear.trycloudflare.com"
+application_url = "https://decorative-deadline-luxury-haiti.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -11,9 +11,9 @@ scopes = "write_products,read_products,read_product_listings,read_publications,r
 
 [auth]
 redirect_urls = [
-  "https://toner-shaped-bra-linear.trycloudflare.com/auth/callback",
-  "https://toner-shaped-bra-linear.trycloudflare.com/auth/shopify/callback",
-  "https://toner-shaped-bra-linear.trycloudflare.com/api/auth/callback"
+  "https://decorative-deadline-luxury-haiti.trycloudflare.com/auth/callback",
+  "https://decorative-deadline-luxury-haiti.trycloudflare.com/auth/shopify/callback",
+  "https://decorative-deadline-luxury-haiti.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

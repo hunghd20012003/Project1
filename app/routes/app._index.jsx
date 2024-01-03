@@ -295,10 +295,12 @@ export default function Index() {
   //*******************************************************************************D** */
   /*****************xử lý bảng thứ 2 */
   var Today=new Date();
-  var fiveDayAgo=new Date();
-  fiveDayAgo.setDate(Today.getDate()-5);
+  var fiveDayAgo=new Date(Today);
+  fiveDayAgo.setDate(Today.getDate()-4);
   Today.setHours(23,59,59,999);
+  console.log(Today);
   fiveDayAgo.setHours(0,0,0,0);
+  console.log(fiveDayAgo);
   var fiveDayProduct=[];
   var numberfiveDayProduct=[];
   for(let i=0;i<actionData[4].length;i++){
@@ -330,11 +332,16 @@ export default function Index() {
     ],
   };
   ///sử lý cho biểu đồ tròn với 5 tuần
-  var endOfWeek=new Date();
-  endOfWeek.setDate(startOfWeek.getDate()+6);
+  
+  var currentDate = new Date();  // Lấy ngày hiện tại
+  var dayOfWeek = currentDate.getDay(); 
+  var startOfWeek1 = new Date();
+  startOfWeek1.setDate(currentDate.getDate() - dayOfWeek);
+  var endOfWeek=new Date(startOfWeek1);
+  endOfWeek.setDate(startOfWeek1.getDate()+6);
   endOfWeek.setHours(23,59,59,999);
-  var startOfFiveWeekAgo=new Date();
-  startOfFiveWeekAgo.setDate(startOfWeek.getDate()-4*7)
+  var startOfFiveWeekAgo=new Date(startOfWeek1);
+  startOfFiveWeekAgo.setDate(startOfWeek1.getDate()-4*7);
   startOfFiveWeekAgo.setHours(0,0,0,0);
   var fiveWeekProduct=[];
   var numberfiveWeekProduct=[];
@@ -366,7 +373,6 @@ export default function Index() {
       },
     ],
   };
-
   //actionList cho pie chart
   const [activePie, setActivePie] = useState(false);
   const [dataProductssPie,setdataProductssPie]=useState(dataProductsWithfiveDay);
